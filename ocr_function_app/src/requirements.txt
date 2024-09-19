@@ -1,0 +1,11 @@
+azure-ai-documentintelligence==1.0.0b4
+azure-core==1.31.0
+azure-functions==1.20.0
+python-dotenv==1.0.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.1
+azure-ai-formrecognizer==3.3.3
+pydantic==2.9.2
+azure-storage-blob==12.23.0
+azure-identity==1.17.1
+azure-communication-email==1.0.0

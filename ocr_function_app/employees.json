@@ -1,0 +1,10 @@
+{ // Example config format
+  // This is NOT used, it is expected that this is
+  // uploaded to Azure Blob Storage
+    "employees": [
+        {
+            "name": "Mark Foresman",
+            "alias": "markforesman@microsoft.com"
+        }
+    ]
+}

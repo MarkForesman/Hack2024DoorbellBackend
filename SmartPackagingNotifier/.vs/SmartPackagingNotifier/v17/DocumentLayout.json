@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|c:\\dev\\smartpackaginghack\\smartpackagingnotifier\\smartpackagingnotifier\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|solutionrelative:smartpackagingnotifier\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|c:\\dev\\smartpackaginghack\\smartpackagingnotifier\\smartpackagingnotifier\\packagenotifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|solutionrelative:smartpackagingnotifier\\packagenotifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|c:\\dev\\smartpackaginghack\\smartpackagingnotifier\\smartpackagingnotifier\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6561AC5E-6781-447B-8FEF-BC61EA1CB873}|SmartPackagingNotifier\\SmartPackagingNotifier.csproj|solutionrelative:smartpackagingnotifier\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 348,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PackageNotifier.cs",
+              "DocumentMoniker": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\PackageNotifier.cs",
+              "RelativeDocumentMoniker": "SmartPackagingNotifier\\PackageNotifier.cs",
+              "ToolTip": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\PackageNotifier.cs",
+              "RelativeToolTip": "SmartPackagingNotifier\\PackageNotifier.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T23:01:28.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\local.settings.json",
+              "RelativeDocumentMoniker": "SmartPackagingNotifier\\local.settings.json",
+              "ToolTip": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\local.settings.json",
+              "RelativeToolTip": "SmartPackagingNotifier\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-18T22:38:53.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\Constants.cs",
+              "RelativeDocumentMoniker": "SmartPackagingNotifier\\Constants.cs",
+              "ToolTip": "C:\\dev\\smartpackaginghack\\SmartPackagingNotifier\\SmartPackagingNotifier\\Constants.cs",
+              "RelativeToolTip": "SmartPackagingNotifier\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T17:00:35.561Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 278,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa9a73a5-b2bf-400b-b57c-58f166ff1c56}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

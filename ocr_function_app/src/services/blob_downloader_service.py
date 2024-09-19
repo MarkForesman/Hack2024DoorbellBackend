@@ -1,7 +1,9 @@
 from azure.storage.blob import BlobServiceClient, generate_blob_sas
 from datetime import datetime, timedelta
 
-def download_blob_to_string(blob_service_client: BlobServiceClient, container_name: str, blob_name: str) -> str:
+def download_blob_to_string(blob_service_client: BlobServiceClient, 
+                            container_name: str, 
+                            blob_name: str) -> str:
     """Downloads a blobs text contents
 
     Args:
@@ -10,7 +12,7 @@ def download_blob_to_string(blob_service_client: BlobServiceClient, container_na
         blob_name (str): Name of the blob to be downloaded.
 
     Returns:
-        str: The blob text contents.
+        string (str): The blob text contents.
     """
     blob_client = blob_service_client.get_blob_client(
     container=container_name, blob=blob_name)
@@ -32,7 +34,7 @@ def generate_blob_sas_token(blob_service_client: BlobServiceClient,
         expiry_duration_days (int, optional): Blob SAS token expiry time in days. Defaults to 30.
 
     Returns:
-        str: The generated SAS token
+        string (str): The generated SAS token
     """
     
     # Set the expiry time for the SAS token

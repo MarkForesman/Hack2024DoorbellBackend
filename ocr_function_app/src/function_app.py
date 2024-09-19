@@ -77,3 +77,12 @@ def package_notifier(msg: func.QueueMessage) -> None:
     else:
         logging.error(f"Event: {event.Type} is not a valid event!")
         raise NotImplementedError()
+
+@app.function_name(name="health_check")
+@app.route(route="health", auth_level=func.AuthLevel.ANONYMOUS)
+def health_check_function(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('Python HTTP trigger function processed a request.')
+    return func.HttpResponse(
+        "This HTTP triggered function executed successfully.",
+        status_code=200
+        )

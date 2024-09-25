@@ -7,6 +7,7 @@
   - [Overview](#overview)
     - [Setup](#setup)
       - [Prerequisites](#prerequisites)
+    - [Deployment](#deployment)
   - [Resources](#resources)
 
 ## Overview
@@ -56,9 +57,9 @@ Once these are deployed, you will have to configure some of the services.
 
 Make sure to follow this format. It will *only* continue if the message type is `PackageLabelScanEvent`.
 
-4. There are a few environment variables that need to be configured, details on those are below.
-   - To configure, you will need to copy the existing [.env.template](./src/.env.template) and
-   rename it to to `.env`. Fill in the values as needed.
+There are a few environment variables that need to be configured, details on those are below.
+To configure, you will need to copy the existing [.env.template](./src/.env.template) and
+rename it to to `.env`. Fill in the values as needed.
 
 | Variable Name                                   | Description                                      |
 |------------------------------------------------|--------------------------------------------------|
@@ -73,7 +74,12 @@ Make sure to follow this format. It will *only* continue if the message type is 
 | `COMMUNICATION_SENDER_ADDRESS`                 | The email address from which communications will be sent. |
 | `GROUP_EMAIL_ALIAS`                            | An alias for a group email address that can be used for sending emails to multiple recipients. |
 
+### Deployment
+
+To deploy this application, confirm the environment variables are filled out
+and run [deploy.sh](/ocr_function_app/src/deploy.sh)
+
 ## Resources
 
-<https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal>
-<https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=linux%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal>
+- [Communication Services Setup](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/connect-email-communication-resource?pivots=azure-portal)
+- [Email Communication Services Setup](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?tabs=linux%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal)

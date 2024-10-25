@@ -13,7 +13,7 @@
   "FUNCTIONS_WORKER_RUNTIME": "dotnet",
   "eventhub_connection_string": "",
   "iot_service_connection_string": "",
-  "signaler_device_ids": "104,107",
+  "signaler_device_ids": "103,104,105,106,107,108,109,110,111",
   "storage_account_key": "",
   "storage_account_name": "",
   "storage_account_queue_name": ""

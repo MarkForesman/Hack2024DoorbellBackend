@@ -8,9 +8,9 @@
       }
     }
   },
- 
+
   "AzureWebJobsStorage": "",
-  "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+  "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
   "eventhub_connection_string": "",
   "iot_service_connection_string": "",
   "signaler_device_ids": "104,107",

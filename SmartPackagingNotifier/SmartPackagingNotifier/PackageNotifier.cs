@@ -4,30 +4,38 @@ using System.Text.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Azure.EventHubs;
-using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using Azure.Messaging.EventHubs;
 
 namespace SmartPackagingNotifier
 {
     public class PackageNotifier
     {
-        private GetConfiguration ConfigurationService;
-        [FunctionName("PackageNotifier")]
-        public async Task Run([EventHubTrigger("doorbellhub", Connection = "eventhub_connection_string")] EventData[] events, ILogger log, ExecutionContext context)
+        private FunctionConfiguration ConfigurationService;
+        private readonly ILogger<PackageNotifier> _logger;
+        public PackageNotifier(FunctionConfiguration configurationService, ILogger<PackageNotifier> logger)
         {
-            var exceptions = new List<Exception>();
-            ConfigurationService = new GetConfiguration(context);
-            string[] signaler_devices = ConfigurationService.GetArray("signaler_device_ids");
-            string iotServiceConnectionString = ConfigurationService.Get("iot_service_connection_string");
-            var queueSender = new QueueSender(ConfigurationService.Get("storage_account_name"), ConfigurationService.Get("storage_account_queue_name"), ConfigurationService.Get("storage_account_key"));
+            ConfigurationService = configurationService;
+            _logger = logger;
+        }
+
+        [Function("PackageNotifier")]
+        public async Task Run([EventHubTrigger("doorbellhub", Connection = "eventhub_connection_string")] EventData[] events)
+        {
+            var exceptions = new List<Exception>();       
+            string[] signaler_devices = ConfigurationService.SignalerDeviceIds;
+            string iotServiceConnectionString = ConfigurationService.IotServiceConnectionString;
+            var queueSender = new QueueSender(ConfigurationService.StorageAccountName, ConfigurationService.StorageAccountQueueName, ConfigurationService.StorageAccountKey);
 
 
             foreach (EventData eventData in events)
             {
                 try
                 {
-                    string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
+                    
+                    var eventBodyArray = eventData.EventBody.ToArray();                    
+                    string messageBody = Encoding.UTF8.GetString(eventBodyArray);
                     try
                     {
                         //deserialize messageBody into ButtonPressEvent
@@ -81,10 +89,10 @@ namespace SmartPackagingNotifier
                     }
                     catch (Exception ex)
                     {
-                        log.LogError($"{ex.Message.GetType()} - {ex.Message}");
+                        _logger.LogError($"{ex.Message.GetType()} - {ex.Message}");
                     }
                     // Replace these two lines with your processing logic.
-                    log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+                    _logger.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
                     await Task.Yield();
                 }
                 catch (Exception e)

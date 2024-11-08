@@ -18,6 +18,7 @@ namespace SmartPackagingNotifier
         {
             ConfigurationService = configurationService;
             _logger = logger;
+            logger.LogInformation("PackageNotifier initialized");
         }
 
         [Function("PackageNotifier")]
@@ -26,7 +27,7 @@ namespace SmartPackagingNotifier
             var exceptions = new List<Exception>();       
             string[] signaler_devices = ConfigurationService.SignalerDeviceIds;
             string iotServiceConnectionString = ConfigurationService.IotServiceConnectionString;
-            var queueSender = new QueueSender(ConfigurationService.StorageAccountName, ConfigurationService.StorageAccountQueueName, ConfigurationService.StorageAccountKey);
+            var queueSender = new QueueSender(ConfigurationService.StorageAccountName, ConfigurationService.StorageAccountQueueName, _logger);
 
 
             foreach (EventData eventData in events)

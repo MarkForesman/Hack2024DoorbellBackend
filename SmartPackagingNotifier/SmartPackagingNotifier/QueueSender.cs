@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using Azure.Identity;
+using Azure.Storage.Queues;
+using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Azure;
-using Azure.Identity;
-using Azure.Storage;
-using Azure.Storage.Queues;
 
 namespace SmartPackagingNotifier
 {
     internal class QueueSender
     {
-        public QueueClient queueClient { get; init; }
-        public QueueSender(string storageAccountName, string queueName, string accountKey)
-        {
-            StorageSharedKeyCredential credential = new StorageSharedKeyCredential(storageAccountName, accountKey);
-            // Create a URI to the queue
-            Uri queueUri = new Uri($"https://{storageAccountName}.queue.core.windows.net/{queueName}");
+        private QueueClient queueClient { get; init; }
+        private readonly ILogger<PackageNotifier> _logger;
 
-            // Create a QueueClient object
-            queueClient = new QueueClient(queueUri, credential);
+        public QueueSender(string storageAccountName, string queueName, ILogger<PackageNotifier> logger)
+        {            
+            _logger = logger;
+            using (_logger.BeginScope("Initiate connection to Azure Storage Queue"))
+            {
+                _logger.LogInformation("Getting default Azure Credentials");
+                var credential = new DefaultAzureCredential();
+                _logger.LogInformation($"Aquired credential type: {credential.GetType().Name}");
+                // Create a URI to the queue
+                Uri queueUri = new Uri($"https://{storageAccountName}.queue.core.windows.net/{queueName}");
+
+                // Create a QueueClient object
+                _logger.LogInformation("Creating QueueClient object");
+                queueClient = new QueueClient(queueUri, credential);
+            }
         }
 
         public async Task Send<T>(T message)

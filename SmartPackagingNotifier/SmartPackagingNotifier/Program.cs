@@ -20,8 +20,7 @@ var host = new HostBuilder()
             fc.EventHubConnectionString = configuration["eventhub_connection_string"];            
             fc.IotServiceConnectionString = configuration["iot_service_connection_string"];
             fc.StorageAccountQueueName = configuration["storage_account_queue_name"];
-            fc.SignalerDeviceIds = GetArray(configuration["signaler_device_ids"]);
-            fc.StorageAccountKey = configuration["storage_account_key"];
+            fc.SignalerDeviceIds = GetArray(configuration["signaler_device_ids"]);            
             fc.StorageAccountName = configuration["storage_account_name"];
 
 
